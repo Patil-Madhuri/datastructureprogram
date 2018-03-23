@@ -17,30 +17,30 @@ public class WeekDayQueue
 	{
 		Utility utility = new Utility();
 		System.out.println("Enter the month");
-		int month = utility.inputInteger();
+		int lMonth = utility.inputInteger();
 		System.out.println("Enter the year");
-		int year = utility.inputInteger();
-		int start = Utility.dayOfWeek(month,1, year);
+		int lYear = utility.inputInteger();
+		int lStartDay = Utility.dayOfWeek(lMonth,1, lYear);
 		Queue week  = new LinkedList<>();
-		int maxDay = Utility.maxDay(month, year);
-		int numberOfObject;
+		int lmaxDay = Utility.maxDay(lMonth, lYear);
+		int lNumberOfObject;
 		int date = 0;
-		if (maxDay + start > 35) {
-			numberOfObject = 6;
+		if (lmaxDay + lStartDay > 35) {
+			lNumberOfObject = 6;
 		} else {
-			numberOfObject = 5;
+			lNumberOfObject = 5;
 		}
-		for (int i = 0; i < numberOfObject; i++) {
+		for (int i = 0; i < lNumberOfObject; i++) {
 			week.add(new LinkedList<>());
 		}
-		for (int i = 0; i < numberOfObject; i++) {
+		for (int i = 0; i < lNumberOfObject; i++) {
 			Queue queue = (Queue) week.poll();
 			if (i == 0) {
-				for (int j = 0; j < start; j++)
+				for (int j = 0; j < lStartDay; j++)
 				{
 					queue.add(" ");
 				}
-				for(int j = start;j<7;j++)
+				for(int j = lStartDay;j<7;j++)
 				{
 					queue.add(++date);
 				}
@@ -50,7 +50,7 @@ public class WeekDayQueue
 				for(int j = 0; j <7;j++)
 				{
 					queue.add(++date);
-					if(date == maxDay)
+					if(date == lmaxDay)
 					{
 						break;
 					}
@@ -60,14 +60,14 @@ public class WeekDayQueue
 			week.add(queue);
 		}
 		System.out.println("SUN"+"\t"+"M"+"\t"+"TU"+"\t"+"WED"+"\t"+"TH"+"\t"+"FRI"+"\t"+"SAT");
-		for(int i = 0; i < numberOfObject; i++)
+		for(int i = 0; i < lNumberOfObject; i++)
 		{
 			Queue queue = (Queue) week.poll();
-			int length = queue.size();
-			for(int j = 0; j <length; j++)
+			int lLength = queue.size();
+			for(int j = 0; j <lLength; j++)
 			{
 				System.out.print(queue.poll());
-				System.out.println("");
+				System.out.print("\t");
 			}
 			System.out.println();
 		}

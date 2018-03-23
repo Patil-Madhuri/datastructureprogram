@@ -13,8 +13,8 @@ public class NumberOFBinarySearchTree
 	{
 		Utility utility = new Utility();
 		System.out.println("Enter the number of node: ");
-		int node = utility.inputInteger();
-		int array[] = new int[node];
+		int lNumberOfNode = utility.inputInteger();
+		int array[] = new int[lNumberOfNode];
 		for(int i=0;i<array.length;i++)
 		{
 			array[i] = utility.inputInteger();

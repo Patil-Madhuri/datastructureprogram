@@ -1,56 +1,62 @@
 package com.bridgelabz.datastructure;
-
+/******************************************************************************  
+ *  Purpose: Banking cash counter
+ * @author  Madhuri Chaudhari
+ *  @version 1.0
+ *  @since   19-03-2018
+ ******************************************************************************/
 import com.bridgelabz.utility.Utility;
 
 public class Banking 
 {
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) 
 	{
 		Utility utility = new Utility();
 		Queue depositeQueue = new Queue();
 		Queue withdrawQueue = new Queue();
-		Queue mainQueue = new Queue();
-		int choice = 0,numberOfPerson,depositperson,withdrawperson;
-		double depositAmount,withdrawamount;
+		
+		int lChoice = 0,lNumberOfPerson,lDepositperson,lWithdrawperson;
+		double lDepositAmount,lWithdrawamount;
 		System.out.println("How many person bank serve: ");
-		numberOfPerson = utility.inputInteger();
-		for(int i=1;i<=numberOfPerson;i++)
+		lNumberOfPerson = utility.inputInteger();
+		for(int i=1;i<=lNumberOfPerson;i++)
 		{
 			System.out.println("1.Deposite queue \n2.Withdraw queue \n3.Deposite amount \n4.withdraw amount \n5.Check Balanace");
 			System.out.println("Enter your choice: ");
-			choice = utility.inputInteger();
-			switch(choice)
+			lChoice = utility.inputInteger();
+			switch(lChoice)
 			{
 			case 1: 
 				System.out.println("Enter the number of person who want to deposit: ");
-				depositperson = utility.inputInteger();
-				for(i=0;i<depositperson;i++)
+				lDepositperson = utility.inputInteger();
+				for(i=0;i<lDepositperson;i++)
 				{
-					depositeQueue.enqueue(depositperson);
+					depositeQueue.enqueue(lDepositperson);
 				}
 				System.out.println("Size of deposite queue: "+depositeQueue.getSize());
 				break;
 			case 2:
 				System.out.println("Enter the number of person who want to withdraw: ");
-				withdrawperson = utility.inputInteger();
-				for(i=0;i<withdrawperson;i++)
+				lWithdrawperson = utility.inputInteger();
+				for(i=0;i<lWithdrawperson;i++)
 				{
-					withdrawQueue.enqueue(withdrawperson);
+					withdrawQueue.enqueue(lWithdrawperson);
 				}
 				System.out.println("Size of withdraw queue: "+withdrawQueue.getSize());
 				break;
 			
 			case 3: 
 				System.out.println("Enter the amount to deposit: ");
-				depositAmount = utility.inputDouble();
-				Utility.depositeAmount(depositAmount);
+				lDepositAmount = utility.inputDouble();
+				Utility.depositeAmount(lDepositAmount);
 				depositeQueue.dequeue();
 				System.out.println("Size of deposite queue: "+depositeQueue.getSize());
 				break;
 			case 4:
 				System.out.println("Enter the amount to withdraw: ");
-				withdrawamount = utility.inputDouble();
-				Utility.withdrawAmount(withdrawamount);
+				lWithdrawamount = utility.inputDouble();
+				Utility.withdrawAmount(lWithdrawamount);
 				withdrawQueue.dequeue();
 				System.out.println("Size of withdraw queue: "+withdrawQueue.getSize());
 				break;

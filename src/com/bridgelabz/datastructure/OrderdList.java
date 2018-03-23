@@ -12,8 +12,8 @@ public class OrderdList
 	public static void main(String[] args) 
 	{
 		Utility utility = new Utility();
-		String filepath="/home/bridgeit/Documents/MADHURI/number";
-		String words[] = Utility.readFile(filepath);
+		String lFilepath="/home/bridgeit/Documents/MADHURI/number";
+		String words[] = Utility.readFile(lFilepath);
 		for(int i=0;i<words.length;i++)
 		{
 			System.out.print(Integer.parseInt(words[i])+ " ");

@@ -2,15 +2,15 @@ package com.bridgelabz.datastructure;
 
 public class Data
 {
-	String weekday;
-	int date;
+	String lWeekday;
+	int lDate;
 	Data(String weekday,int date)
 	{
-		this.weekday = weekday;
-		this.date = date;
+		this.lWeekday = weekday;
+		this.lDate = date;
 	}
 	public String toString()
 	{
-		return date +"\t"+ weekday;
+		return lDate +"\t"+ lWeekday;
 	}
 }

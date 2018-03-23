@@ -16,30 +16,30 @@ public class AnagramStack
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) 
 	{
-		Stack ls = new Stack();  
-		ArrayList<Integer> arr = Utility.primeNumbers(0,1000); 
-		ArrayList<Integer> anagram = new ArrayList<Integer>();
-		for(int element : arr)
+		Stack stack = new Stack();  
+		ArrayList<Integer> arrayList = Utility.primeNumbers(0,1000); 
+		ArrayList<Integer> anagramNumbers = new ArrayList<Integer>();
+		for(int element : arrayList)
 		{
-			int temp = element;
-			int sum=0;
-			while(temp!=0)
+			int lTemperary = element;
+			int lSum=0;
+			while(lTemperary!=0)
 			{
-				int rem = temp%10;
-				sum =(sum*10)+rem;
-				temp = temp/10;
+				int lRemender = lTemperary%10;
+				lSum =(lSum*10)+lRemender;
+				lTemperary = lTemperary/10;
 			}
-			if(arr.contains(sum))
+			if(arrayList.contains(lSum))
 			{
-				anagram.add(sum);
-				anagram.sort(null);
+				anagramNumbers.add(lSum);
+				anagramNumbers.sort(null);
 			}
 		}
-		for(int element:anagram)
+		for(int element:anagramNumbers)
 		{
-			ls.push(element);
+			stack.push(element);
 		}
-		ls.display();
+		stack.display();
 	}
 	
 }

@@ -10,22 +10,23 @@ import com.bridgelabz.utility.Utility;
 
 public class CalenderQueue 
 {
+		@SuppressWarnings("rawtypes")
 		public static void main(String[] args) 
 		{
 			Queue queue = new Queue();
 			Utility utility = new Utility();
 			System.out.println("Enter month: ");
-			int month = utility.inputInteger();
+			int lMonth = utility.inputInteger();
 			System.out.println("Enter year");
-			int year = utility.inputInteger();
-			for(int i=1;i<=Utility.maxDay(month, year);i++)
+			int lYear = utility.inputInteger();
+			for(int i=1;i<=Utility.maxDay(lMonth, lYear);i++)
 			{
 			
-				Data data= new Data(Utility.day(i,month, year), i);
+				Data data= new Data(Utility.day(i,lMonth, lYear), i);
 				queue.enqueue(data);
 			}
 			
-			for(int i=1;i<=Utility.maxDay(month, year);i++)
+			for(int i=1;i<=Utility.maxDay(lMonth, lYear);i++)
 			{
 				System.out.println(queue.dequeueString());
 			}

@@ -7,9 +7,10 @@ package com.bridgelabz.datastructure;
  ******************************************************************************/
 public class AnagramQueue 
 {
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		Queue queue = new Queue();
-		int count=0,i;
+		int lCount=0,i;
 		for( i=11; i<1000; i++)
 		{
 			boolean temp=true;
@@ -23,12 +24,12 @@ public class AnagramQueue
 			}
 			if(temp==true)
 			{
-				count++;
+				lCount++;
 			}
 		}
 		
-		int arr1[]=new int[count];
-		int arr2[]=new int[count];
+		int intArray1[]=new int[lCount];
+		int intArray2[]=new int[lCount];
 		int index=0;
 		for( i=11; i<1000; i++)
 		{
@@ -43,28 +44,28 @@ public class AnagramQueue
 			}
 			if(temp==true)
 			{
-				arr1[index]=i;
+				intArray1[index]=i;
 				int number=i;
 				int sum=0,remender;
 				while(number>0)
 				{
-					remender=number%10;
-					sum=(sum*10)+remender;
-					number=number/10;
+					remender = number % 10;
+					sum = (sum*10) + remender;
+					number = number/10;
 				}
-				arr2[index]=sum;
+				intArray2[index]=sum;
 				index++;
 			}
 		}
 		
 		System.out.println("Anagram numbers are : ");
-		for(i=0; i<arr1.length; i++)
+		for(i=0; i<intArray1.length; i++)
 		{
-			for(int j=0; j<arr2.length; j++)
+			for(int j=0; j<intArray2.length; j++)
 			{
-				if(arr1[i]==arr2[j])
+				if(intArray1[i]==intArray2[j])
 				{
-					int digit=arr1[i];
+					int digit=intArray2[i];
 					queue.enqueue(digit);
 					
 				}

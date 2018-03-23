@@ -11,17 +11,17 @@ public class BalanceParenthesis
 	public static void main(String[] args) 
 	{
 		Utility utility = new Utility();
-		boolean result;
+		boolean lResult;
 		System.out.println("Enter the arithmatic expression ");
-		String expression =utility.inputString();
-		if(expression.length()==0) 
+		String lExpression =utility.inputString();
+		if(lExpression.length()==0) 
 		{
 			System.out.println("Please enter the expression ");
 		}
 		else
 		{	
-			result = Utility.balancedParentheses(expression);
-			if(result) 
+			lResult = Utility.balancedParentheses(lExpression);
+			if(lResult) 
 			{
 				System.out.println("it is a valid expression ");
 			}

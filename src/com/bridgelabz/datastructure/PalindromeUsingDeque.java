@@ -8,35 +8,34 @@ package com.bridgelabz.datastructure;
 import com.bridgelabz.utility.Utility;
 public class PalindromeUsingDeque 
 {
-		@SuppressWarnings("unused")
+		
 		public static void  main(String[]args)
 		{	
-			char d='o';
 			Utility utility = new Utility();
 			
 			System.out.println("Enter to check palindrome or not");
-			String string = utility.inputString();
-			char[]ch=string.toCharArray();
-			int n=ch.length-1;
+			String lString = utility.inputString();
+			char[] charArray=lString.toCharArray();
+			int n=charArray.length-1;
 			DequeueStructure dequeue=new DequeueStructure(10);
 	
-			for(int i=0;i<ch.length;i++)
+			for(int i=0;i<charArray.length;i++)
 			{
-				dequeue.addFront(ch[i]);
+				dequeue.addFront(charArray[i]);
 			}
 	
-			int s=dequeue.size();
-			System.out.println("Size= "+s);
+			int dequeueSize = dequeue.size();
+			System.out.println("Size= "+dequeueSize);
 	
-			String string1="";
+			String lString1="";
 	
 			for(int i=0;i<=n;i++)
 			{
 				char c=dequeue.removeFront();
-				string1=string1+c;
+				lString1 =lString1 + c;
 			}
-			System.out.println("Reversed - "+string1);
-			if(string.equals(string1))
+			System.out.println("Reversed - "+lString1);
+			if(lString.equals(lString1))
 			{
 				System.out.println("Sttring is Palindrome ");
 			}

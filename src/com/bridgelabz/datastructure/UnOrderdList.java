@@ -11,8 +11,8 @@ public class UnOrderdList
 {
 	public static void main(String[] args)
 	{
-		String filepath ="/home/bridgeit/Documents/MADHURI/demo";
-		String words[] = Utility.readFile(filepath);
+		String lFilepath ="/home/bridgeit/Documents/MADHURI/demo";
+		String words[] = Utility.readFile(lFilepath);
 		for(int i=0;i<words.length;i++)
 		{
 			System.out.println(words[i]);
@@ -36,7 +36,7 @@ public class UnOrderdList
 			System.out.println("Word is present in the linked list");
 			linkedlist.remove(search);
 			System.out.println("\nYour list size: "+linkedlist.size());
-			Utility.writeFile(linkedlist,filepath);
+			Utility.writeFile(linkedlist,lFilepath);
 			
 		}
 		else
@@ -45,7 +45,7 @@ public class UnOrderdList
 			System.out.println("Word added");
 			System.out.println("\nYour list size: "+linkedlist.size());
 			linkedlist.display();
-			Utility.writeFile(linkedlist,filepath);
+			Utility.writeFile(linkedlist,lFilepath);
 		}
 		
 	}

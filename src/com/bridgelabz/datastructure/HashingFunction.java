@@ -1,4 +1,10 @@
 package com.bridgelabz.datastructure;
+/******************************************************************************  
+ *  Purpose: Hashing function
+ * @author  Madhuri Chaudhari
+ *  @version 1.0
+ *  @since   18-03-2018
+ ******************************************************************************/
 import com.bridgelabz.utility.Utility;
 
 public class HashingFunction

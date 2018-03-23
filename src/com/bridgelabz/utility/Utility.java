@@ -96,10 +96,10 @@ public class Utility
 	 * @param limit
 	 * @return arraylist integer
 	 */
-	public static ArrayList<Integer> primeNumbers(int start, int limit)
+	public static ArrayList<Integer> primeNumbers(int lStart, int lLimit)
 	{
 		ArrayList<Integer> primeNumbersList = new ArrayList<Integer>();
-		for (int i = 2; i <= limit; i++) 
+		for (int i = 2; i <= lLimit; i++) 
 		{
 			boolean prime = true;
 			for (int j = 2; j < i; j++) 
@@ -123,13 +123,13 @@ public class Utility
 	 * @param num1
 	 * @return
 	 */
-	public static boolean anagramNum(int num, int num1) {
-		String str1 = "";
-		String str2 = "";
-		str1 = String.valueOf(num);
-		str2 = String.valueOf(num1);
-		char[] charFromWord = str1.toCharArray();
-		char[] charFromAnagram = str2.toCharArray();
+	public static boolean anagramNum(int lNumber, int lNumber1) {
+		String lString1 = "";
+		String lString2 = "";
+		lString1 = String.valueOf(lNumber);
+		lString2 = String.valueOf(lNumber1);
+		char[] charFromWord = lString1.toCharArray();
+		char[] charFromAnagram = lString2.toCharArray();
 		Arrays.sort(charFromWord);
 		Arrays.sort(charFromAnagram);
 		return Arrays.equals(charFromWord, charFromAnagram);
@@ -157,7 +157,7 @@ public class Utility
 	public static void twoDimentionlPrimeAnagramNumber(TreeSet<Integer> treeset)
 	{
 		
-		int row=0,column = 0,i,j,number=100;
+		int lRow=0,lColumn = 0,i,j,lNumber=100;
 		Object integerArray[] =treeset.toArray();
 		String stringArray[][] = new String[10][25];
 		for(i=0;i<10;i++)
@@ -170,13 +170,13 @@ public class Utility
 		for(i=0;i<integerArray.length;i++)
 		{
 			int temperaroy = (int) integerArray[i];
-			if(temperaroy > number)
+			if(temperaroy > lNumber)
 			{
-				number = number + 100;
-				row++;
-				column=0;
+				lNumber = lNumber + 100;
+				lRow++;
+				lColumn=0;
 			}
-			stringArray[row][column++] = Integer.toString(temperaroy);
+			stringArray[lRow][lColumn++] = Integer.toString(temperaroy);
 		}
 		
 		System.out.println("Anagram numbers are: ");
@@ -195,31 +195,31 @@ public class Utility
 	 * Balanced parenthisis
 	 * @return
 	 */
-	public static boolean balancedParentheses(String expression) 
+	public static boolean balancedParentheses(String lExpression) 
 	{
-		int count = 0;
+		int lCount = 0;
 		Stack<Character> stack = new Stack<Character>();
-		for (int i = 0; i < expression.length(); i++) 
+		for (int i = 0; i < lExpression.length(); i++) 
 		{
-			if (expression.charAt(i) == '(')
+			if (lExpression.charAt(i) == '(')
 			{
-				stack.push(expression.charAt(i));
-				count++;
+				stack.push(lExpression.charAt(i));
+				lCount++;
 			}
 
-			if (expression.charAt(i) == ')') 
+			if (lExpression.charAt(i) == ')') 
 			{
 				if (stack.isEmpty())
 				{
-					count--;
+					lCount--;
 				} else
 				{
 					stack.pop();
-					count--;
+					lCount--;
 				}
 			}
 		}
-		if (stack.isEmpty() && count == 0) 
+		if (stack.isEmpty() && lCount == 0) 
 		{
 			return true;
 		} 
@@ -228,33 +228,33 @@ public class Utility
 			return false;
 		}
 	}
-	static double balance =80000;
+	static double mbalance =80000;
 	/**
 	 * @param deposit the amount in account
 	 */
-	public static void depositeAmount(double amt)
+	public static void depositeAmount(double lAmount)
 	{
-		balance=balance+amt;
-		System.out.println("Amount of Rs"+amt+" Deposited Sucessfully");
-		System.out.println("Current Balance is Rs"+balance);
+		mbalance= mbalance + lAmount;
+		System.out.println("Amount of Rs"+lAmount+" Deposited Sucessfully");
+		System.out.println("Current Balance is Rs"+mbalance);
 		
 	}
 	
 	/**
 	 * @param withdraw the amount from account
 	 */
-	public static void withdrawAmount(double amount)
+	public static void withdrawAmount(double lAmount)
 	{
-			if(amount <= balance) 
+			if(lAmount <= mbalance) 
 			{
-				balance=balance-amount;
-				System.out.println("Amount of Rs"+amount+" Withdraws Sucessfully");
-				System.out.println("Current Balance is Rs"+balance);
+				mbalance=mbalance-lAmount;
+				System.out.println("Amount of Rs"+lAmount+" Withdraws Sucessfully");
+				System.out.println("Current Balance is Rs"+mbalance);
 			}
 			else
 			{
-				amount =  amount - balance;
-				System.out.println("Insufficeint balance You need "+ amount);
+				lAmount =  lAmount - mbalance;
+				System.out.println("Insufficeint balance You need "+ lAmount);
 			}
 	}
 	
@@ -263,35 +263,35 @@ public class Utility
 	 */
 	public static void checkbalance()
 	{
-		System.out.println("Current Balance is Rs "+balance);
+		System.out.println("Current Balance is Rs "+mbalance);
 	}
 	
 	/**
 	 * @param accept the month,day, year from user and print the whole calender of that month
 	 * @return
 	 */
-	public static int dayOfWeek(int month, int date, int year) //
+	public static int dayOfWeek(int lMonth, int lDate, int lYear) //
 	{
-        int y = year - ((14 - month) / 12);
+        int y = lYear - ((14 - lMonth) / 12);
         int x = y + (y/4) -(y/100) + (y/400);
-        int m = month + 12 * ((14 - month) / 12) - 2;
-        int d = (date + x + (31*m)/12) % 7;
+        int m = lMonth + 12 * ((14 - lMonth) / 12) - 2;
+        int d = (lDate + x + (31*m)/12) % 7;
         return d;
     }
 	
-	public static int maxDay(int month,int year)
+	public static int maxDay(int lMonth,int lYear)
 	{
-		if(month==1 || month==3 || month==5 || month == 7 || month == 8 || month == 10 || month == 12)
+		if(lMonth==1 || lMonth==3 || lMonth==5 || lMonth == 7 || lMonth == 8 || lMonth == 10 || lMonth == 12)
 		{
 			return 31;
 		}
-		else if(month ==4 || month == 6|| month == 9|| month ==11)
+		else if(lMonth ==4 || lMonth == 6|| lMonth == 9|| lMonth ==11)
 		{
 			return 30;
 		}
 		else
 		{
-			if(isLeapYear(year))
+			if(isLeapYear(lYear))
 			{
 				return 29;
 			}
@@ -316,7 +316,7 @@ public class Utility
         return false;
     }
 
-    public static void getCalender(int month,int year)
+    public static void getCalender(int lMonth,int lYear)
     {
 
         // months[i] = name of month i
@@ -326,28 +326,28 @@ public class Utility
         int[] days = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
         // check for leap year
-        if (month == 2 && Utility.isLeapYear(year))
+        if (lMonth == 2 && Utility.isLeapYear(lYear))
         	{
-        	days[month] = 29;
+        	days[lMonth] = 29;
         	}
 
-        System.out.println("Java Calender " +month + " "+year +" ");
+        System.out.println("Java Calender " +lMonth + " "+lYear +" ");
         // print calendar header
-        System.out.println(" " + months[month] + " " + year);
+        System.out.println(" " + months[lMonth] + " " + lYear);
         System.out.println("====================");
        System.out.println(" S  M Tu  W Th  F  S");
         
         // starting day
-        int d = Utility.dayOfWeek(month, 1, year);
+        int lD = Utility.dayOfWeek(lMonth, 1, lYear);
 
         // print the calendar
-        for (int i = 0; i < d; i++)
+        for (int i = 0; i < lD; i++)
             System.out.print("   ");
         
-        for (int i = 1; i <= days[month]; i++)
+        for (int i = 1; i <= days[lMonth]; i++)
         {
             System.out.printf("%2d ", i);
-            if (((i + d) % 7 == 0) || (i == days[month])) 
+            if (((i + lD) % 7 == 0) || (i == days[lMonth])) 
             {
             	System.out.println();
             }
@@ -364,9 +364,9 @@ public class Utility
 		Stack month = new Stack();
 		Stack day = new Stack();
 		System.out.println("Enter the month ");
-		int mon = utility.inputInteger();
+		int lMonth = utility.inputInteger();
 		System.out.println("Enter the year ");
-		int year = utility.inputInteger();
+		int lYear = utility.inputInteger();
 
 		String[] months = {"","January", "February", "March","April", "May", "June",
 				"July", "August", "September","October", "November", "December"};
@@ -375,35 +375,35 @@ public class Utility
 			month.push(months[i]);
 		}
 		int[] days = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-		if (mon == 2 && isLeapYear(year)) 
+		if (lMonth == 2 && isLeapYear(lYear)) 
 		{
-			days[mon] = 29;
+			days[lMonth] = 29;
 		}
 		for(int i=0;i<days.length;i++)
 		{
 			day.push(days[i]);
 		}
-		System.out.println("   " + months[mon] + " " + year);
+		System.out.println("   " + months[lMonth] + " " + lYear);
 		System.out.println(" S  M Tu  W Th  F  S");
-		int d = dayOfWeek(mon, 1, year);
+		int d = dayOfWeek(lMonth, 1, lYear);
 		for (int i = 0; i < d; i++)
 		{
 			System.out.print("   ");
 		}
-		for (int i = 1; i <= days[mon]; i++)
+		for (int i = 1; i <= days[lMonth]; i++)
 		{
 			System.out.printf("%2d ", i);
-			if (((i + d) % 7 == 0) || (i == days[mon])) 
+			if (((i + d) % 7 == 0) || (i == days[lMonth])) 
 				System.out.println();
 		}
 
 	}
 
-	public static String day(int date,int month,int year)
+	public static String day(int lDate,int lMonth,int lYear)
 	{
-	 int d=	Utility.dayOfWeek(month,date , year);
+		int lD=	Utility.dayOfWeek(lMonth,lDate , lYear);
 		String dayName="";
-		switch(d)
+		switch(lD)
 		{
 		case 0:
 			dayName = "sunday";
@@ -435,27 +435,27 @@ public class Utility
 	 * @param accept the filePath and read the file
 	 * @return
 	 */
-	@SuppressWarnings("unused")
-	public static String[] readFile(String filePath) {
+	
+	public static String[] readFile(String lFilePath) {
 		String words[] = {};
-		ArrayList<String> lines = new ArrayList<String>();
+		ArrayList<String> lLines = new ArrayList<String>();
 		String line, temp[] = {};
 		BufferedReader bufferedReader;
-		FileReader file;
-		int index = 0;
+		 
+		
 		try {
-			file = new FileReader(filePath);
+			FileReader file = new FileReader(lFilePath);
 			bufferedReader = new BufferedReader(file);
 			while ((line = bufferedReader.readLine()) != null) 
 			{
 				temp = line.split(" ");
 				for (int i = 0; i < temp.length; i++)
 				{
-					lines.add(temp[i]);
+					lLines.add(temp[i]);
 
 				}
 			}
-			words = lines.toArray(new String[lines.size()]);
+			words = lLines.toArray(new String[lLines.size()]);
 			bufferedReader.close();
 		} 
 		catch (FileNotFoundException e) 
@@ -472,19 +472,20 @@ public class Utility
 	/**
 	 * @param search
 	 */
-	public static<T> void writeFileinteger(T search) 
+	public static<T> void writeFileinteger(T lSearch) 
 	{ 
-		String string = search.toString();
-		System.out.println(string);
+		String lString = lSearch.toString();
+		System.out.println(lString);
 		try {
 			FileWriter writer = new FileWriter("/home/bridgeit/Documents/MADHURI/wriehashingdata");
 			BufferedWriter write = new BufferedWriter(writer);
-			write.write(string);
+			write.write(lString);
 
 			write.close();
 			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e)
+		{
+			
 			e.printStackTrace();
 		}
 
@@ -495,11 +496,11 @@ public class Utility
 	 * Hashing function
 	 * @param array
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
+	@SuppressWarnings({ "unchecked", "rawtypes",  })
 	public static void hashingFunction(String[] array) 
 	{
 		HashMap<Integer, LinkedList1> hashmap = new HashMap<Integer, LinkedList1 >();
-		int hash = 0;
+		int lHash = 0;
 		int hasharray[]=new int[array.length];
 		for(int i=0;i<array.length;i++)
 		{
@@ -507,28 +508,28 @@ public class Utility
 		}
 		for(int i=0;i<hasharray.length;i++)
 		{
-			hash=hasharray[i]%11;
-			if(hashmap.containsKey(hash))
+			lHash=hasharray[i]%11;
+			if(hashmap.containsKey(lHash))
 			{
 
-				LinkedList1 linkedlist=hashmap.get(hash);
+				LinkedList1 linkedlist=hashmap.get(lHash);
 				linkedlist.add(hasharray[i]);
 			}
 			else
 			{
-				hashmap.put(hash, new LinkedList1());
-				LinkedList1 linkedlist=hashmap.get(hash);
+				hashmap.put(lHash, new LinkedList1());
+				LinkedList1 linkedlist=hashmap.get(lHash);
 				linkedlist.add(hasharray[i]);
 			}
 		}
 		System.out.println("Enter the key to search");
 		int search = scanner.nextInt();
-        hash= search % 11;
+		lHash= search % 11;
 
-		if(hashmap.containsKey(hash))
+		if(hashmap.containsKey(lHash))
 		{
 
-			LinkedList1 linkedlist=hashmap.get(hash);
+			LinkedList1 linkedlist=hashmap.get(lHash);
 			if(linkedlist.search(search))
 			{
 				linkedlist.remove(search);
@@ -546,8 +547,8 @@ public class Utility
 		}
 		else
 		{
-			hashmap.put(hash, new LinkedList1());
-			LinkedList1 linkedlist=hashmap.get(hash);
+			hashmap.put(lHash, new LinkedList1());
+			LinkedList1 linkedlist=hashmap.get(lHash);
 			linkedlist.add(search);
 			Utility.writeFileinteger(hashmap);
 
@@ -567,21 +568,21 @@ public class Utility
 	 */
 	public static void findNumberOfBinarySearchTree(int array[])
 	{
-		long fact1,fact2,fact3,counter = 0;
+		long lFactorial1,lFactorial2,lFactorial3,lCounter = 0;
 		for(int i=0;i<array.length;i++)
 		{
-			fact1 = factorial((2) * (array[i]));
-			fact2 = factorial((array[i]+1));
-			fact3 = factorial(array[i]);
+			lFactorial1 = calculateFactorial((2) * (array[i]));
+			lFactorial2 = calculateFactorial((array[i]+1));
+			lFactorial3 = calculateFactorial(array[i]);
 			try
 			{
-			counter = fact1/(fact2*fact3);
+				lCounter = lFactorial1/(lFactorial2 * lFactorial3);
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 				
 			}
-			System.out.println(counter);
+			System.out.println(lCounter);
 		}
 		
 	}
@@ -591,15 +592,15 @@ public class Utility
 	 * @param calculating the factorial of number
 	 * @return
 	 */
-	public static long factorial(int i)
+	public static long calculateFactorial(int i)
 	{
-		long fact = 1;
+		long lFactorial = 1;
 		while(i > 1)
 		{
-			fact = fact * i;
+			lFactorial = lFactorial * i;
 			i--;
 		}
-		return fact;
+		return lFactorial;
 	}
 	
 	/**
@@ -610,14 +611,14 @@ public class Utility
 	public static void twoDimensionalPrimeNumber()
 	{
 		int array[][]=new int[10][];
-		int initial=2,temp=100;
+		int lInitial=2,lTemperary=100;
 		int i,j,k;
 		
 		System.out.println("prime numbers are");
 		for(i=0; i<10; i++)
 		{
 			int size=0;
-			for(j=initial; j<temp; j++)
+			for(j=lInitial; j<lTemperary; j++)
 			{
 				boolean flag=true;
 				for(k=2; k<j; k++)
@@ -636,19 +637,19 @@ public class Utility
 			array[i]=new int[size];
 			j=0;
 			int m;
-			for(m=initial; m<temp; m++)
+			for(m=lInitial; m<lTemperary; m++)
 			{
-				boolean temp1=true;
+				boolean lTemperary1=true;
 				for(int q=2; q<m; q++)
 				{
 					if(m%q==0)
 					{
-						temp1=false;
+						lTemperary1=false;
 						break;
 					}
 				}
 				
-				if(temp1==true)
+				if(lTemperary1==true)
 				{
 					array[i][j]=m;
 					System.out.print(array[i][j]+"  ");
@@ -656,8 +657,8 @@ public class Utility
 				}
 			}
 			System.out.println();
-			initial=temp;
-			temp=temp+100;
+			lInitial = lTemperary;
+			lTemperary =lTemperary + 100;
 		}
 	
 		
@@ -686,11 +687,11 @@ public class Utility
 	 */
 	public static <T> void writeFileinteger(OrderListStructure<T> list)
 	{
-			String string = list.toString();
+			String lString = list.toString();
 			try {
 				FileWriter writer = new FileWriter("/home/bridgeit/Documents/MADHURI/number");
 				BufferedWriter write = new BufferedWriter(writer);
-				write.write(string);
+				write.write(lString);
 				
 				write.close();
 				writer.close();
