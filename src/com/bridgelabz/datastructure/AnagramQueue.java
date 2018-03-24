@@ -8,7 +8,8 @@ package com.bridgelabz.datastructure;
 public class AnagramQueue 
 {
 	@SuppressWarnings("rawtypes")
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		Queue queue = new Queue();
 		int lCount=0,i;
 		for( i=11; i<1000; i++)
