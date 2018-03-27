@@ -1,15 +1,15 @@
 package com.bridgelabz.datastructure;
 
-import java.util.ArrayList;
-
-import com.bridgelabz.utility.Utility;
-
 /******************************************************************************  
  *  Purpose:Storing the anagram number in stack
  * @author  Madhuri Chaudhari
  *  @version 1.0
  *  @since   12-03-2018
  ******************************************************************************/
+
+import java.util.ArrayList;
+import com.bridgelabz.utility.Utility;
+
 public class AnagramStack
 {
 	
